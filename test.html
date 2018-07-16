@@ -1,0 +1,1368 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-pCRDtdb3GlUU48h+oRJVA8f0GddrLnU97wB7mHQ7q6c40vMbMMZsFdk0IMhkUFRqw1M/y4EkWxtaKwfeFezOkQ==" rel="stylesheet" href="https://assets-cdn.github.com/assets/frameworks-73f533b7cc08a9d040e601cfd38fa585.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-u0L3ev2Wyj88Pkt46bVUtdzRMqHhLoJZtwkPEEv/o/mpkg38+/CSjzQEmVk87SW9FQyPBrP6hnyJ0kK43KmYWg==" rel="stylesheet" href="https://assets-cdn.github.com/assets/github-be464eb6b4f13b2f0159853fc9b1ae95.css" />
+  
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Using Git with Terminal · codepath/ios_guides Wiki</title>
+    <meta name="description" content="GitHub is where people build software. More than 28 million people use GitHub to discover, fork, and contribute to over 85 million projects.">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/3710273?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="codepath/ios_guides" /><meta property="og:url" content="https://github.com/codepath/ios_guides" /><meta property="og:description" content="ios_guides - Comprehensive open-source iOS guides" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6Mjk2NzA2NDYyOjI1YzZjZDU0MjdiYjk3MzhkMmMzYzRjYTAyY2FkZmY0MTQzNTk5NzYyMmFjZWRlMzg4MzUyYzNmNjlmOTIyMDA=--2aa437ace4ea8f062c75dc64cd091964502afcd3">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+  <meta name="request-id" content="B828:54D9:28DC24F:3CE6CB9:5B4C66AB" data-pjax-transient>
+
+
+  
+
+  <meta name="selected-link" value="repo_wiki" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="B828:54D9:28DC24F:3CE6CB9:5B4C66AB" /><meta name="octolytics-dimension-region_edge" content="ap-southeast-1" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="15539964" /><meta name="octolytics-actor-login" content="thanhduong9613" /><meta name="octolytics-actor-hash" content="1449425aa827fdf22de87d68f746e6a129abe6fd232f3623ce4e60ef62742f27" />
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/wiki/show" data-pjax-transient="true" />
+
+
+
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="thanhduong9613">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="NzRlNzM2ZDE5MDdmNWY3Zjc1N2NjYjVmZWYzNGVlM2MwNTUyNzIxM2Y0ODgzYTZkMmE3ZjY4YjY1YmUxOWQzYXx7InJlbW90ZV9hZGRyZXNzIjoiMTQuMTc3LjE2Mi40MCIsInJlcXVlc3RfaWQiOiJCODI4OjU0RDk6MjhEQzI0RjozQ0U2Q0I5OjVCNEM2NkFCIiwidGltZXN0YW1wIjoxNTMxNzMzNzE2LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+    <meta name="enabled-features" content="UNIVERSE_BANNER,FREE_TRIALS,MARKETPLACE_INSIGHTS,MARKETPLACE_SEARCH,MARKETPLACE_INSIGHTS_CONVERSION_PERCENTAGES">
+
+  <meta name="html-safe-nonce" content="1d20ff7563c9940d2e7eb0d42a8d3fb96cb7a5ec">
+
+  <meta http-equiv="x-pjax-version" content="8701dcc70f29d97b064c12cef3a369e7">
+  
+
+      <link href="https://github.com/codepath/ios_guides/commits/master.atom" rel="alternate" title="Recent Commits to ios_guides:master" type="application/atom+xml">
+
+  <meta name="description" content="ios_guides - Comprehensive open-source iOS guides">
+  <meta name="go-import" content="github.com/codepath/ios_guides git https://github.com/codepath/ios_guides.git">
+
+  <meta name="octolytics-dimension-user_id" content="3710273" /><meta name="octolytics-dimension-user_login" content="codepath" /><meta name="octolytics-dimension-repository_id" content="14855579" /><meta name="octolytics-dimension-repository_nwo" content="codepath/ios_guides" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="14855579" /><meta name="octolytics-dimension-repository_network_root_nwo" content="codepath/ios_guides" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <meta name="u2f-support" content="true">
+
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        
+<header class="Header  f5" role="banner">
+  <div class="d-flex flex-justify-between px-3 container-lg">
+    <div class="d-flex flex-justify-between ">
+      <div class="">
+        <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+
+      </div>
+
+    </div>
+
+    <div class="HeaderMenu d-flex flex-justify-between flex-auto">
+      <div class="d-flex">
+            <div class="">
+              <div class="header-search scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+  role="search combobox"
+  aria-owns="jump-to-results"
+  aria-label="Search or jump to"
+  aria-haspopup="listbox"
+  aria-expanded="true"
+>
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" data-scope-type="Repository" data-scope-id="14855579" data-scoped-search-url="/codepath/ios_guides/search" data-unscoped-search-url="/search" action="/codepath/ios_guides/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <label class="form-control header-search-wrapper header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input type="text"
+          class="form-control header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+          data-hotkey="s,/"
+          name="q"
+          value=""
+          placeholder="Search or jump to…"
+          data-unscoped-placeholder="Search or jump to…"
+          data-scoped-placeholder="Search or jump to…"
+          autocapitalize="off"
+          aria-autocomplete="list"
+          aria-controls="jump-to-results"
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=IaRPqGkDHYj1SaJmV3bnxwb6vROEPv9OhQNr7QIMS0wGU4V+uX946xpNz7YIo55hBA/7rmavBtgSkWzICkPjCg=="
+          spellcheck="false"
+          autocomplete="off"
+          >
+          <input type="hidden" class="js-site-search-type-field" name="type" >
+            <img src="https://assets-cdn.github.com/images/search-shortcut-hint.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              <ul class="d-none js-jump-to-suggestions-template-container">
+                <li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item">
+                  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center p-2 jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open" href="">
+                    <div class="jump-to-octicon js-jump-to-octicon mr-2 text-center d-none"></div>
+                    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar" alt="" aria-label="Team" src="" width="28" height="28">
+
+                    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden no-wrap css-truncate css-truncate-target">
+                    </div>
+
+                    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+                      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+                        In this repository
+                      </span>
+                      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+                        All GitHub
+                      </span>
+                      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+
+                    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+                      Jump to
+                      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+                  </a>
+                </li>
+                <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-repo-octicon-template" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+                <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-project-octicon-template" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+                <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-search-octicon-template" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
+              </ul>
+              <ul class="d-none js-jump-to-no-results-template-container">
+                <li class="d-flex flex-justify-center flex-items-center p-3 f5 d-none">
+                  <span class="text-gray">No suggested jump to results</span>
+                </li>
+              </ul>
+
+              <ul id="jump-to-results" class="js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container" >
+                <li class="d-flex flex-justify-center flex-items-center p-0 f5">
+                  <img src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
+                </li>
+              </ul>
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+            </div>
+
+          <ul class="d-flex pl-2 flex-items-center text-bold list-style-none" role="navigation">
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="/pulls">
+                Pull requests
+</a>            </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="/issues">
+                Issues
+</a>            </li>
+              <li>
+                <a class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="/marketplace">
+                   Marketplace
+</a>              </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="/explore">
+                Explore
+</a>            </li>
+          </ul>
+      </div>
+
+      <div class="d-flex">
+        
+<ul class="user-nav d-flex flex-items-center list-style-none" id="user-links">
+  <li class="dropdown">
+    <span class="d-inline-block  px-2">
+      
+    <a aria-label="You have no unread notifications" class="notification-indicator tooltipped tooltipped-s  js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="notification-changed:15539964" href="/notifications">
+        <span class="mail-status "></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.99 11.991v1H0v-1l.73-.58c.769-.769.809-2.547 1.189-4.416.77-3.767 4.077-4.996 4.077-4.996 0-.55.45-1 .999-1 .55 0 1 .45 1 1 0 0 3.387 1.229 4.156 4.996.38 1.879.42 3.657 1.19 4.417l.659.58h-.01zM6.995 15.99c1.11 0 1.999-.89 1.999-1.999H4.996c0 1.11.89 1.999 1.999 1.999z"/></svg>
+</a>
+    </span>
+  </li>
+
+  <li class="dropdown">
+    <details class="details-overlay details-reset js-dropdown-details d-flex px-2 flex-items-center">
+      <summary class="HeaderNavlink"
+         aria-label="Create new…"
+         data-ga-click="Header, create new, icon:add">
+        <svg class="octicon octicon-plus float-left mr-1 mt-1" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg>
+        <span class="dropdown-caret mt-1"></span>
+      </summary>
+
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="codepath/ios_guides">This repository</span>
+  </div>
+    <a class="dropdown-item" href="/codepath/ios_guides/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </details>
+  </li>
+
+  <li class="dropdown">
+
+    <details class="details-overlay details-reset js-dropdown-details d-flex pl-2 flex-items-center">
+      <summary class="HeaderNavlink name mt-1"
+        aria-label="View profile and more"
+        data-ga-click="Header, show menu, icon:avatar">
+        <img alt="@thanhduong9613" class="avatar float-left mr-1" src="https://avatars0.githubusercontent.com/u/15539964?s=40&amp;v=4" height="20" width="20">
+        <span class="dropdown-caret"></span>
+      </summary>
+
+      <ul class="dropdown-menu dropdown-menu-sw">
+        <li class="dropdown-header header-nav-current-user css-truncate">
+          Signed in as <strong class="css-truncate-target">thanhduong9613</strong>
+        </li>
+
+        <li class="dropdown-divider"></li>
+
+        <li><a class="dropdown-item" href="/thanhduong9613" data-ga-click="Header, go to profile, text:your profile">
+          Your profile
+        </a></li>
+        <li><a class="dropdown-item" href="/thanhduong9613?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a></li>
+          <li><a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, your gists, text:your gists">Your gists</a></li>
+
+        <li class="dropdown-divider"></li>
+
+        <li><a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
+          Help
+        </a></li>
+
+        <li><a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+          Settings
+        </a></li>
+
+        <li><!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="fsVIo1Yzc5vUQbFNpHb9Kgx51OQ5Pb62Zmz0FCuSSxL4JGNTg9YPOofnrBFV+YsmLNs+ruHoYoNeBjzamc8ygQ==" />
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+        </form></li>
+      </ul>
+    </details>
+  </li>
+</ul>
+
+
+
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+e7Wz1JR0hAETyYsw9UgE53blMt+uzBZeVsD56b/0W1/D/0/h7SusVfpO3AyWlYfvXl+gaZu7GxBMcspFKKo/g==" />
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </div>
+</header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main" class="application-main ">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <div id="js-repo-pjax-container" data-pjax-container >
+      
+
+
+
+  
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+  <li>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-autosubmit="true" data-remote="true" class="js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vMG2hHqJ/ZuvWcdCNcAhgJUphj8UdZ3TBtuyqzzUBpXtc83dtpcn6jJsv63mWrzXliztwbpoD5i+fUCjPha60w==" />      <input type="hidden" name="repository_id" id="repository_id" value="14855579" class="form-control" />
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="/codepath/ios_guides/subscription"
+            class="btn btn-sm btn-with-count select-menu-button js-menu-target"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Toggle repository notifications menu"
+            data-ga-click="Repository, click Watch settings, action:wiki#show">
+            <span class="js-select-button">
+                <svg class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count"
+            href="/codepath/ios_guides/watchers"
+            aria-label="232 users are watching this repository">
+            232
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content">
+            <div class="select-menu-header js-navigation-enable" tabindex="-1">
+              <svg class="octicon octicon-x js-menu-close" role="img" aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12" height="16"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input type="radio" name="do" id="do_included" value="included" checked="checked" />
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input type="radio" name="do" id="do_subscribed" value="subscribed" />
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                        Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input type="radio" name="do" id="do_ignore" value="ignore" />
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg class="octicon octicon-mute" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
+                        Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/codepath/ios_guides/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="hbFD3aD03J8mlDBGX7QptGKKBoXcYvsXYt8F7hghlnGZw/gJ5TMVy5bGy8xatz1qkC/NQWNhpXAnTbkE4dp+lQ==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar codepath/ios_guides"
+        data-ga-click="Repository, click unstar button, action:wiki#show; text:Unstar">
+        <svg class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/codepath/ios_guides/stargazers"
+           aria-label="2150 users starred this repository">
+          2,150
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/codepath/ios_guides/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="hNE0JwZui9pQUCQ9gbtPaC6FIiYh2QCbZ13D7amTsAy8HzoryMTl+BZkbK2bcC36pdG74QCGzvz7Qi8E6DZ2jw==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star codepath/ios_guides"
+        data-ga-click="Repository, click star button, action:wiki#show; text:Star">
+        <svg class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/codepath/ios_guides/stargazers"
+           aria-label="2150 users starred this repository">
+          2,150
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <details class="details-reset details-overlay details-overlay-dark d-inline-block float-left"
+            data-deferred-details-content-url="/codepath/ios_guides/fork?fragment=1">
+            <summary class="btn btn-sm btn-with-count"
+              title="Fork your own copy of codepath/ios_guides to your account"
+              data-ga-click="Repository, show fork modal, action:wiki#show; text:Fork">
+              Fork
+            </summary>
+            <details-dialog class="anim-fade-in fast Box Box--overlay d-flex flex-column">
+              <div class="Box-header">
+                <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
+                  <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+                </button>
+                <h3 class="Box-title">Where should we fork this repository?</h3>
+              </div>
+              <div class="Box-body overflow-auto text-center">
+                <include-fragment>
+                  <div class="octocat-spinner my-3" aria-label="Loading..."></div>
+                  <p class="f5 text-gray">If this dialog fails to load, you can visit <a href="/codepath/ios_guides/fork">the fork page</a> directly.</p>
+                </include-fragment>
+              </div>
+            </details-dialog>
+          </details>
+
+    <a href="/codepath/ios_guides/network" class="social-count"
+       aria-label="365 users forked this repository">
+      365
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" href="/codepath">codepath</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="/codepath/ios_guides">ios_guides</a></strong>
+
+</h1>
+
+    </div>
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax container"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /codepath/ios_guides" href="/codepath/ios_guides">
+      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /codepath/ios_guides/issues" href="/codepath/ios_guides/issues">
+        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">33</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /codepath/ios_guides/pulls" href="/codepath/ios_guides/pulls">
+      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /codepath/ios_guides/projects" href="/codepath/ios_guides/projects">
+      <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="Counter" >0</span>
+</a>
+    <a class="js-selected-navigation-item selected reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /codepath/ios_guides/wiki" href="/codepath/ios_guides/wiki">
+      <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+
+  <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /codepath/ios_guides/pulse" href="/codepath/ios_guides/pulse">
+    <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Insights
+</a>
+
+</nav>
+
+
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav  ">
+  <div class="repository-content ">
+
+    
+  <div id="wiki-wrapper" class="wiki-wrapper page">
+  
+
+  <div class="gh-header">
+    <div class="gh-header-show">
+          <div class="gh-header-actions">
+            <a class="btn btn-sm " href="/codepath/ios_guides/wiki/Using-Git-with-Terminal/_edit">Edit</a>
+            <a class="btn btn-sm btn-primary" href="/codepath/ios_guides/wiki/_new">New Page</a>
+          </div>
+      <h1 class="gh-header-title instapaper_title">Using Git with Terminal</h1>
+        <div class="gh-header-meta">
+          Roger Hu edited this page <relative-time datetime="2017-10-18T18:43:06Z">Oct 19, 2017</relative-time>
+          &middot;
+          <a href="/codepath/ios_guides/wiki/Using-Git-with-Terminal/_history" class="history">
+            37 revisions
+          </a>
+        </div>
+    </div>
+  </div>
+  <div id="wiki-content" class="wiki-content">
+    <div class="has-rightbar">
+
+    <div id="wiki-rightbar" class="wiki-rightbar">
+      <div class="wiki-pages-box readability-sidebar boxed-group flush js-wiki-pages-box " role="navigation">
+        
+<h3 class="js-wiki-toggle-collapse wiki-auxiliary-content">
+  <svg class="octicon octicon-triangle-down caret-expanded" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"/></svg>
+  <svg class="octicon octicon-triangle-right caret-collapsed" viewBox="0 0 6 16" version="1.1" width="6" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 14l6-6-6-6v12z"/></svg>
+  Pages <span class="Counter">121</span>
+</h3>
+<div class="boxed-group-inner wiki-auxiliary-content wiki-auxiliary-content-no-bg">
+    <div class="filter-bar">
+      <input type="text" id="wiki-pages-filter" class="form-control input-sm input-block js-filterable-field" placeholder="Find a Page…" aria-label="Find a Page…">
+    </div>
+
+  <ul class="wiki-pages" data-filterable-for="wiki-pages-filter" data-filterable-type="substring">
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki">Home</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Adding-and-Removing-Child-View-Controllers">Adding and Removing Child View Controllers</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Adding-Image-Assets">Adding Image Assets</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Adding-Views-to-the-Window">Adding Views to the Window</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Animating-A-Sequence-of-Images">Animating A Sequence of Images</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Animating-View-Properties">Animating View Properties</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Animation">Animation</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/App-Transport-Security">App Transport Security</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Application-Architecture">Application Architecture</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Asynchronous-Queues">Asynchronous Queues</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Auto-Layout">Auto Layout</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Auto-Layout-Basics">Auto Layout Basics</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Auto-Layout-Exercises">Auto Layout Exercises</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Building-Data-driven-Apps-with-Parse">Building Data driven Apps with Parse</a></strong>
+    </li>
+    <li>
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Calling-a-Method-After-Delay">Calling a Method After Delay</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Camera-Quickstart">Camera Quickstart</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/CocoaPods">CocoaPods</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Collection-View-Guide">Collection View Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Color-Matching">Color Matching</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Common-Issues">Common Issues</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Common-Views">Common Views</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Configure-a-Button">Configure a Button</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Configuring-a-Parse-Server">Configuring a Parse Server</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Container-View-Controllers">Container View Controllers</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Container-View-Controllers-Quickstart">Container View Controllers Quickstart</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Contributing-Guidelines">Contributing Guidelines</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-a-Custom-Camera-View">Creating a Custom Camera View</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-a-Custom-Modal-Transition">Creating a Custom Modal Transition</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-a-Custom-Navigation-Bar">Creating a Custom Navigation Bar</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-a-Custom-Tab-Bar">Creating a Custom Tab Bar</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-a-Free-Form-View-Controller">Creating a Free Form View Controller</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-a-Log-In-Screen">Creating a Log In Screen</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-Custom-View-Controllers">Creating Custom View Controllers</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-Nested-Views">Creating Nested Views</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Creating-View-Controllers-from-Storyboard">Creating View Controllers from Storyboard</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Custom-View-Controller-Transitions">Custom View Controller Transitions</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Custom-Views">Custom Views</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Custom-Views-Quickstart">Custom Views Quickstart</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Debugging-Apps">Debugging Apps</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Designer-Guides">Designer Guides</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Fixing-Xcode">Fixing Xcode</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Form-Input">Form Input</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Interface-Builder">Interface Builder</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Internet-Permissions">Internet Permissions</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Local-Data-Persistence-Using-Realm">Local Data Persistence Using Realm</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Local-Notifications">Local Notifications</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Location-Quickstart">Location Quickstart</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Maps">Maps</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Moving-and-Transforming-Views-with-Gestures">Moving and Transforming Views with Gestures</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Multithreading-in-iOS">Multithreading in iOS</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Navigation-Controller">Navigation Controller</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Navigation-Controller-Quickstart">Navigation Controller Quickstart</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Network-Programming">Network Programming</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/New-Project">New Project</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/New-Project-(designers)">New Project (designers)</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/OAuth">OAuth</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Passing-Data-Propagating-Events">Passing Data Propagating Events</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Polishing-a-UI-Tips-and-Tools">Polishing a UI Tips and Tools</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Programmatically-Creating-Views">Programmatically Creating Views</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Project-Basics">Project Basics</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Project-Frameworks">Project Frameworks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Provisioning-Profiles">Provisioning Profiles</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Readme-Template-iOS-for-Designers-Week-1">Readme Template iOS for Designers Week 1</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Readme-Template-iOS-for-Designers-Week-2">Readme Template iOS for Designers Week 2</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Readme-Template-iOS-for-Designers-Week-3">Readme Template iOS for Designers Week 3</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Readme-Template-iOS-for-Designers-Week-4">Readme Template iOS for Designers Week 4</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Readme-Template-iOS-for-Designers-Week-5">Readme Template iOS for Designers Week 5</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Registering-for-Keyboard-Events">Registering for Keyboard Events</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Registering-for-Text-Field-Events">Registering for Text Field Events</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/RottenTomatoes-Tutorial">RottenTomatoes Tutorial</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Scroll-View-Guide">Scroll View Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Search-Bar-Guide">Search Bar Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Services-Frameworks">Services Frameworks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Setup">Setup</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Showing-a-progress-HUD">Showing a progress HUD</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Simulated-Infinite-Scrolling">Simulated Infinite Scrolling</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Simulated-Network-Loading">Simulated Network Loading</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Swift-and-Objective-C">Swift and Objective C</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Swift-Basics">Swift Basics</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Swift-Intermediate">Swift Intermediate</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Swift-ObjectiveC-Interoperability">Swift ObjectiveC Interoperability</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Tab-Bar-Controller-Guide">Tab Bar Controller Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Tab-Bar-Quickstart">Tab Bar Quickstart</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Table-View-Guide">Table View Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Table-View-Quickstart">Table View Quickstart</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Testing-with-Testflight">Testing with Testflight</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Troubleshooting-API-calls">Troubleshooting API calls</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Troubleshooting-Common-Issues">Troubleshooting Common Issues</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/TTTAttributedLabel">TTTAttributedLabel</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Understanding-Navigation-in-iOS">Understanding Navigation in iOS</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Understanding-Swift">Understanding Swift</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Understanding-the-Application-Lifecycle">Understanding the Application Lifecycle</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Universal-Links">Universal Links</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Upgrading-Xcode-versions">Upgrading Xcode versions</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/UserDefaults">UserDefaults</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-CocoaPods">Using CocoaPods</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-Custom-Code-Snippets">Using Custom Code Snippets</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-Gesture-Recognizers">Using Gesture Recognizers</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-Git-with-Terminal">Using Git with Terminal</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-MapKit">Using MapKit</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-Modal-Transitions">Using Modal Transitions</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-Navigation-Controllers">Using Navigation Controllers</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-Perspective-Transforms">Using Perspective Transforms</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-Timers">Using Timers</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIActionSheet">Using UIActionSheet</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIActivityIndicatorView">Using UIActivityIndicatorView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIAlertController">Using UIAlertController</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIAlertView">Using UIAlertView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UICollectionView">Using UICollectionView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIImageView">Using UIImageView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIKitDynamics">Using UIKitDynamics</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIPageControl">Using UIPageControl</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIRefreshControl">Using UIRefreshControl</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIScrollView">Using UIScrollView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UITableView">Using UITableView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-UIWebView">Using UIWebView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-View-Transforms">Using View Transforms</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Using-WebKit-View">Using WebKit View</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/View-Controller-Lifecycle">View Controller Lifecycle</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/View-Controller-Transitions">View Controller Transitions</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a class="wiki-page-link" href="/codepath/ios_guides/wiki/Working-with-UIImageView">Working with UIImageView</a></strong>
+    </li>
+    <li class="wiki-more-pages-link">
+      <a href="#" class="js-wiki-more-pages-link">
+        Show 106 more pages…
+      </a>
+    </li>
+  </ul>
+</div>
+
+      </div>
+
+        <div class="boxed-group flush">
+          <a class="wiki-empty-box" href="/codepath/ios_guides/wiki/_new?wiki%5Bname%5D=_Sidebar"><svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg> Add a custom sidebar</a>
+        </div>
+
+      <h5 class="mt-0 mb-2">Clone this wiki locally</h5>
+      <div class="width-full input-group">
+        <input
+            id="wiki-clone-url"
+            type="text"
+            class="form-control input-sm text-small text-gray input-monospace js-url-field"
+            aria-label="Clone URL for this wiki"
+            value="https://github.com/codepath/ios_guides.wiki.git"
+            readonly="readonly">
+        <span class="input-group-button">
+          <clipboard-copy for="wiki-clone-url" aria-label="Copy to clipboard" class="btn btn-sm zeroclipboard-button">
+            <svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg>
+          </clipboard-copy>
+        </span>
+      </div>
+
+
+    </div>
+
+    <div id="wiki-body" class="wiki-body gollum-markdown-content instapaper_body">
+        <div class="markdown-body">
+          <p>Git is an essential tool in the developers toolkit. Git stores your files like a stream of snapshots, allowing you and other collaborators to make changes to projects and keep everything in sync. This Guide introduces using Git with Terminal. You can click the video link in each section for a video walkthrough or <a href="https://www.youtube.com/playlist?list=PLrT2tZ9JRrf4KDwVwtpszLUxf_CuL2l4y" rel="nofollow">watch the video playlist now</a>.</p>
+<h3>
+<a id="user-content-basic-terminal-navigation" class="anchor" href="#basic-terminal-navigation" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Terminal Navigation</h3>
+<p>The Terminal is much like the finder, but less pretty. There are just a few basic commands needed to navigate around in Terminal. Using Terminal, we often refer to folders as directories. Check out this <a href="https://github.com/0nn0/terminal-mac-cheatsheet/wiki/Terminal-Cheatsheet-for-Mac-(-basics-)">Terminal Cheat Sheet for Mac</a> for a more complete list of commands.</p>
+<ul>
+<li>Open up terminal, cmd + space "terminal".</li>
+<li>
+<code>pwd</code> Figure out which directory you are currently in by "Printing the Working Directory".</li>
+<li>
+<code>ls</code> List the directories and files inside the current directory.
+<ul>
+<li>
+<code>ls -a</code> include hidden files in the list of directories and files. This is helpful when trying to find hidden files like <code>.git</code> or <code>.gitignore</code>
+</li>
+</ul>
+</li>
+<li>
+<code>cd [folder]</code> Go into the folder. e.g. <code>cd Desktop/Developer</code>
+<ul>
+<li>
+<code>cd</code> This by itself will navigate all the way out to your <strong>Home Directory</strong>
+</li>
+<li>
+<code>cd ..</code> Back out to the parent directory of the current directory.</li>
+</ul>
+</li>
+<li>
+<code>open [file]</code> Same as "double-clicking" a file or folder in finder.
+<ul>
+<li>
+<code>open .</code> Opens the current folder or file in finder or it's default application.</li>
+</ul>
+</li>
+<li>
+<code>clear</code> When you need a fresh Terminal window</li>
+</ul>
+<p><strong>Hint</strong> If you can't find the path to a file or folder through terminal, search for it using Finder, then drag the file or folder right into your terminal window! If you are trying to change to that directory, you will need to type <code>cd</code> before dragging in the folder.</p>
+<p><img src="https://camo.githubusercontent.com/64d4556cd72ca12bae9ce178d278f0f3d159c5f1/68747470733a2f2f692e696d6775722e636f6d2f3556375974594a2e676966" alt="Drag Folder into Terminal|400" data-canonical-src="https://i.imgur.com/5V7YtYJ.gif"></p>
+<h3>
+<a id="user-content-creating-a-local-git-repository" class="anchor" href="#creating-a-local-git-repository" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a Local Git Repository</h3>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=Fxe8BW8QWa0%0A" rel="nofollow"><img src="https://camo.githubusercontent.com/8d1bd2ceb2bbc8f0b3d410ca2e6202afccaf23fc/687474703a2f2f696d672e796f75747562652e636f6d2f76692f46786538425738515761302f302e6a7067" alt="Loading" width="240" height="180" border="10" data-canonical-src="http://img.youtube.com/vi/Fxe8BW8QWa0/0.jpg"></a></p>
+<p>Local Git repositories are created and managed locally on your computer.</p>
+<ul>
+<li>
+<p>Xcode will automatically create a local Git repository for your project if you select, "Create Git repository on... My Mac", when you first create your project. You should <strong>Always</strong> select this when creating a new Xcode project.</p>
+<p><img src="https://camo.githubusercontent.com/84d2a435ea1c7f983d2b35f8db038e7461572e7a/68747470733a2f2f692e696d6775722e636f6d2f614a686e644b5a2e706e67" alt="Creating a Local Git Repository Xcode gif|700" data-canonical-src="https://i.imgur.com/aJhndKZ.png"></p>
+</li>
+</ul>
+<p>If you already have a project, where a Git repository was not created when you made the project, you can create a local Git repository using terminal.</p>
+<ul>
+<li>
+<p>Navigate to yor Xcode Project folder in Terminal.</p>
+<div class="highlight highlight-source-shell"><pre>git init</pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-creating-a-gitignore-file" class="anchor" href="#creating-a-gitignore-file" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a .gitignore File</h3>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=N6wQ28h-MmE%0A" rel="nofollow"><img src="https://camo.githubusercontent.com/4ff6ce399d7fc2f153414ae494ddb46ba0ee16b8/687474703a2f2f696d672e796f75747562652e636f6d2f76692f4e3677513238682d4d6d452f302e6a7067" alt="Loading" width="240" height="180" border="10" data-canonical-src="http://img.youtube.com/vi/N6wQ28h-MmE/0.jpg"></a></p>
+<p>When collaborating using Git, you will inevitably run into "merge conflicts". However, you will save yourself from a lot of extraneous conflicts by adding a <code>.gitignore</code> file with the proper content.</p>
+<ul>
+<li>
+<p>Navigate to your Xcode Project folder in Terminal.</p>
+</li>
+<li>
+<p>Use <code>ls -a</code> to list all files including hidden files to check if a <code>.gitignore</code> has already been created.</p>
+</li>
+<li>
+<p>If there is not an existing <code>.gitignore</code> file, create one.</p>
+<div class="highlight highlight-source-shell"><pre>touch .gitignore</pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-add-files-and-directories-to-gitignore" class="anchor" href="#add-files-and-directories-to-gitignore" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add Files and Directories to .gitignore</h3>
+<ul>
+<li>Navigate to your Xcode Project folder in Terminal.</li>
+<li>Open your <code>.gitignore</code> file using, <code>open .gitignore</code>
+</li>
+<li>Copy and paste the <a href="https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore" rel="nofollow">latest and greatest list of files and folders you want to ignore</a> into the .gitignore file.</li>
+</ul>
+<h3>
+<a id="user-content-create-and-configure-gitattributes-file" class="anchor" href="#create-and-configure-gitattributes-file" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create and Configure .gitattributes File</h3>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=MNYxq3eoCN4%0A" rel="nofollow"><img src="https://camo.githubusercontent.com/4c745b0e2e602e2d1ef76940e462a44e9f8d9aba/687474703a2f2f696d672e796f75747562652e636f6d2f76692f4d4e59787133656f434e342f302e6a7067" alt="Loading" width="240" height="180" border="10" data-canonical-src="http://img.youtube.com/vi/MNYxq3eoCN4/0.jpg"></a></p>
+<p>This file allows us to tell Git how we want certain files to be treated. We will add a file to the <code>.gitattributes</code> that tells Git to treat any file with <code>.pbxproj</code> as binary.</p>
+<ul>
+<li>
+<p>Navigate to your Xcode Project folder in Terminal.</p>
+</li>
+<li>
+<p>Use <code>ls -a</code> to list all files including hidden files to check if a <code>.gitattributes</code> has already been created.</p>
+</li>
+<li>
+<p>If there is not an existing `.gitattributes file, create one.</p>
+<div class="highlight highlight-source-shell"><pre>touch .gitattributes</pre></div>
+</li>
+<li>
+<p>Open your <code>.gitattributes</code> file, <code>open .gitattributes</code></p>
+</li>
+<li>
+<p>Add the following code to the <code>.gitattributes</code> file.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">*</span>.pbxproj binary merge=union</pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-add-and-configure-readme" class="anchor" href="#add-and-configure-readme" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add and configure README</h3>
+<ul>
+<li>
+<p>Add a README.md file to your repo</p>
+<div class="highlight highlight-source-shell"><pre>touch README.md</pre></div>
+</li>
+<li>
+<p>Open and edit your README.md</p>
+<div class="highlight highlight-source-shell"><pre>open README.md</pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-adding-and-committing-changes-to-local-repository" class="anchor" href="#adding-and-committing-changes-to-local-repository" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding and Committing Changes to Local Repository</h3>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=G9l7YJ6K0zc%0A" rel="nofollow"><img src="https://camo.githubusercontent.com/854110b1878a7bceb2f05b169ff5995c882988e1/687474703a2f2f696d672e796f75747562652e636f6d2f76692f47396c37594a364b307a632f302e6a7067" alt="Loading" width="240" height="180" border="10" data-canonical-src="http://img.youtube.com/vi/G9l7YJ6K0zc/0.jpg"></a></p>
+<p>Now that your local Git is all setup from the last step, you can update your local Git repository with any changes you make to your project.</p>
+<ul>
+<li>
+<p>Navigate to your Xcode Project folder in Terminal.</p>
+</li>
+<li>
+<p>Check for any changes that have been made to files since your last commit</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+</li>
+<li>
+<p>Stage any files with changes you'd like to commit.</p>
+<div class="highlight highlight-source-shell"><pre>git add [filepath] <span class="pl-c"><span class="pl-c">#</span> This adds an individual file</span>
+git add <span class="pl-c1">.</span> <span class="pl-c"><span class="pl-c">#</span> This adds all files with changes</span></pre></div>
+</li>
+<li>
+<p>Check to see what was added.</p>
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+</li>
+<li>
+<p>Apply the changes to your local Git repository with a message briefly outlining the changes you made.</p>
+<div class="highlight highlight-source-shell"><pre>git commit -m <span class="pl-s"><span class="pl-pds">"</span>Here is my commit message<span class="pl-pds">"</span></span></pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-linking-to-a-remote-repository" class="anchor" href="#linking-to-a-remote-repository" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linking to a Remote Repository</h3>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=8JVmXZ_xreQ%0A" rel="nofollow"><img src="https://camo.githubusercontent.com/566dc5666772c40525ac32fa70170d7178a722ff/687474703a2f2f696d672e796f75747562652e636f6d2f76692f384a566d585a5f787265512f302e6a7067" alt="Loading" width="240" height="180" border="10" data-canonical-src="http://img.youtube.com/vi/8JVmXZ_xreQ/0.jpg"></a></p>
+<p>There are many remote repository options. In this guide we will be using <a href="https://github.com/">GitHub</a>. You will need a GitHub account if you don't have one already.</p>
+<h4>
+<a id="user-content-repository-urls" class="anchor" href="#repository-urls" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Repository URLs</h4>
+<p>There are two types of repository URLs, <a href="https://help.github.com/articles/which-remote-url-should-i-use/">HTTPS and SSH</a>:</p>
+<ul>
+<li>HTTPS: <code>https://github.com/homer/duff_project.git</code>
+</li>
+<li>SSH: <code>git@github.com:homer/duff_project.git</code>
+</li>
+</ul>
+<p>The general workflow is the same for both URLs, but there are some differences in the specifics of commands.</p>
+<h4>
+<a id="user-content-ssh-setup" class="anchor" href="#ssh-setup" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSH Setup</h4>
+<p>You'll first need to <a href="https://help.github.com/articles/generating-an-ssh-key/">register your machine's SSH keys</a> with your Github account. You only need to perform this step <strong>once</strong> for each machine you use.</p>
+<p>Once you've added your SSH key, the SSH repository URL will look like <code>git@github.com:myusername/reponame.git</code> but for your username and project. You won't need to provide credentials (username/password) for any further git commands.</p>
+<h4>
+<a id="user-content-https-setup" class="anchor" href="#https-setup" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTPS Setup</h4>
+<p>There is no additional setup required for using HTTPS. However, you'll need to enter your username and password each time you run the <code>git pull</code> or <code>git push</code> commands:</p>
+<pre><code>git push origin master
+&lt;enter your username at promt&gt;
+&lt;enter your password at prompt&gt;
+</code></pre>
+<h4>
+<a id="user-content-create-a-new-repository-on-github" class="anchor" href="#create-a-new-repository-on-github" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a new Repository on GitHub</h4>
+   <img src="https://camo.githubusercontent.com/2c7356529c418642f9976afeee8cb4522cb6cf04/68747470733a2f2f692e696d6775722e636f6d2f556d487875684e2e676966" width="600" data-canonical-src="https://i.imgur.com/UmHxuhN.gif">
+<ul>
+<li>
+<p>Navigate to your Xcode Project folder in Terminal.</p>
+</li>
+<li>
+<p>Link to the remote repository by adding the following code in Terminal, provided from your GitHub repository. We want to "push an existing repository from the command line".</p>
+<ul>
+<li>NOTE: Make sure you add YOUR GitHub remote address!</li>
+</ul>
+<p><img src="https://camo.githubusercontent.com/9031071e9e4c0410c2e2f46d414bcce49311d432/68747470733a2f2f692e696d6775722e636f6d2f343875757233442e676966" alt="Link to the remote repository gif|800" data-canonical-src="https://i.imgur.com/48uur3D.gif"></p>
+<ul>
+<li>NOTE: Decide if you want the remote to use <a href="http://guides.codepath.com/ios/Using-Git-with-Terminal#ssh-setup" rel="nofollow">SSH or HTTPS</a> before setting your remote in the next step. I like ssh for the convenience of not always having to input my credentials.</li>
+</ul>
+<div class="highlight highlight-source-shell"><pre>git remote add origin https://github.com/yourUserName/yourRepoName.git
+git push -u origin master</pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-syncing-local-repository-with-your-remote-repository" class="anchor" href="#syncing-local-repository-with-your-remote-repository" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syncing Local Repository With Your Remote Repository</h3>
+<p>When you have made changes to your project and used the <code>git add .</code>, <code>git status</code> and <code>git commit -m "Message"</code> commands to update your local Git repository, the next step is to sync with your remote repository. Luckily, keeping in sync can be done with only two additional steps, <code>git push</code> and <code>git pull</code>.</p>
+<ul>
+<li>
+<p>Navigate to your Xcode Project folder in Terminal.</p>
+</li>
+<li>
+<p>Push changes you have made locally to update the remote repository.</p>
+<div class="highlight highlight-source-shell"><pre>git push</pre></div>
+</li>
+<li>
+<p>Pull changes that have been added to the remote repository by a collaborator to update your local repository.</p>
+<div class="highlight highlight-source-shell"><pre>git pull</pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-cloning-a-remote-repository" class="anchor" href="#cloning-a-remote-repository" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cloning a Remote Repository</h3>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=2-nFvX6vEoI%0A" rel="nofollow"><img src="https://camo.githubusercontent.com/d37a0ca5d34abc37b3eaf2da22303c7939b5ec76/687474703a2f2f696d672e796f75747562652e636f6d2f76692f322d6e4676583676456f492f302e6a7067" alt="Loading" width="240" height="180" border="10" data-canonical-src="http://img.youtube.com/vi/2-nFvX6vEoI/0.jpg"></a></p>
+<p>If you are collaborating on a project, or just want access to your project from a different computer, you will need to <strong>clone</strong> from the remote repository.</p>
+<ul>
+<li>Get the url of the remote repository. You can access this by going to the remote repository in GitHub and copying the clone link, bottom right.</li>
+</ul>
+<p><img src="https://camo.githubusercontent.com/e00b5b1a4049f8cf8562e763b713c00548e1d058/68747470733a2f2f692e696d6775722e636f6d2f5857457965416f2e706e67" alt="Get the url of the remote repository" data-canonical-src="https://i.imgur.com/XWEyeAo.png"></p>
+<ul>
+<li>
+<p>In Terminal, navigate to the directory you want to clone the repository in.</p>
+</li>
+<li>
+<p>Clone the repository...</p>
+<div class="highlight highlight-source-shell"><pre>git clone https://yourRemoteRepositoryUrl</pre></div>
+</li>
+</ul>
+<h3>
+<a id="user-content-dealing-with-merge-conflicts" class="anchor" href="#dealing-with-merge-conflicts" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dealing With Merge Conflicts</h3>
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=lo8oLnY7H_4%0A" rel="nofollow"><img src="https://camo.githubusercontent.com/a1b1c385a09b57cef3e27273e10d84074274d5c3/687474703a2f2f696d672e796f75747562652e636f6d2f76692f6c6f386f4c6e5937485f342f302e6a7067" alt="Loading" width="240" height="180" border="10" data-canonical-src="http://img.youtube.com/vi/lo8oLnY7H_4/0.jpg"></a></p>
+<p>Inevitably, there will come a time when you AND a collaborator will make changes to the same file and both try to <strong>push</strong> to the remote repository. This will result in a <strong>Merge Conflict</strong>.</p>
+<ul>
+<li>
+<p>In the instance of a Merge Conflict, you will probably get an error in the terminal when attempting to <strong>push</strong> your local changes.</p>
+ <img src="https://camo.githubusercontent.com/c510570974aa01df8fc3c04600e3aa2f935b6f38/68747470733a2f2f692e696d6775722e636f6d2f795745684a64752e706e67" width="600" data-canonical-src="https://i.imgur.com/yWEhJdu.png">
+</li>
+<li>
+<p>As, the error message suggests in the "Hint", the next step is to perform a <code>git pull</code>. The pull will likely result in a message similar to the following.</p>
+<ul>
+<li>NOTE: The error message confirms we have a Merge Conflict in the Main.storyboard file and tells us that we need to fix the conflict and commit the changes.</li>
+</ul>
+ <img src="https://camo.githubusercontent.com/29c33abfc45e437725216ce475931cc094a26a5f/68747470733a2f2f692e696d6775722e636f6d2f70716f454950332e706e67" width="600" data-canonical-src="https://i.imgur.com/pqoEIP3.png">
+</li>
+<li>
+<p>Use <code>git status</code> to confirm which file(s) are causing the conflict.</p>
+ <img src="https://camo.githubusercontent.com/7d67fb0b734b21b6456f55d01ce67e845de1571b/68747470733a2f2f692e696d6775722e636f6d2f674642614e5a742e706e67" width="600" data-canonical-src="https://i.imgur.com/gFBaNZt.png">
+</li>
+<li>
+<p>Use <code>open /yourfileHere/</code> to open up the file in conflict; this will open up the file in Xcode.</p>
+<ul>
+<li>NOTE: In this particular example, the conflict is in the Main.storyboard file. We are usually looking at the Interface Builder view of this file, so to reveal the underlying code, right-click on the <code>Main.storyboard</code> file and choose, <strong>Open As -&gt; Source Code</strong>.</li>
+</ul>
+<p><img src="https://camo.githubusercontent.com/fe403b9e0222d38e6c00ed7a5514d7e80b8f1cc1/68747470733a2f2f692e696d6775722e636f6d2f6b56753961496e2e676966" alt="open conflict file|800" data-canonical-src="https://i.imgur.com/kVu9aIn.gif"></p>
+</li>
+<li>
+<p>Identify the conflicting lines of code; they will be surrounded by, <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD &gt;&gt;&gt;&gt;&gt;&gt;&gt;bunchOfNumbersAndLetters</code> and separated by <code>=======</code>.</p>
+</li>
+<li>
+<p>Choose one to keep and one to delete. Do your best to figure out what the differences are; in this example, we see that the initialViewController is set to a different ID in each, <code>"BYZ-38-t0r"</code> vs. <code>"NFr-Eg-PaI"</code>.</p>
+<p><img src="https://camo.githubusercontent.com/d7549c2fd2f5e2b15850f918ba222cf8eb0fe4b5/68747470733a2f2f692e696d6775722e636f6d2f5a44496254746b2e676966" alt="" data-canonical-src="https://i.imgur.com/ZDIbTtk.gif"></p>
+</li>
+<li>
+<p>Clean your Project, cmd + shift + K</p>
+<ul>
+<li>If your resolved conflict was in the Main.storyboard file, right + click on the storyboard file and choose <strong>Open As -&gt; Interface Builder - Storyboard</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Finally, <strong>push</strong> your local changes to the remote repository.</p>
+</li>
+</ul>
+
+        </div>
+
+      <div id="wiki-footer" class="wiki-footer">
+        <a class="wiki-empty-box" href="/codepath/ios_guides/wiki/_new?wiki%5Bname%5D=_Footer"><svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg> Add a custom footer</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+
+    </div>
+  </div>
+
+  </div>
+
+      
+<div class="footer container-lg px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">&copy; 2018 <span title="0.38882s from unicorn-5d685d4c84-8dtmv">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon" href="https://github.com">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li class="mr-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li class="mr-3"><a href="https://blog.github.com" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" integrity="sha512-wIuAKDhvxe9wCaNR1tzCk3rtl+wXEWC28rmRpzmx0h98VEeWC6Y3xCWV1xAW6NP6eQQX+x8ZGhW6Sdut+mLRuw==" type="application/javascript" src="https://assets-cdn.github.com/assets/compat-a48960bafc17c30572990bbab3664e9c.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-HtXMaArrY9G3PeC0Ak9gvytVs8jgGWgF72UwiHRvPUaF/ru8bw6gGq2qxSli8smS4OcZUo+6sXKV9ilIsIW/cw==" type="application/javascript" src="https://assets-cdn.github.com/assets/frameworks-c3c14c4cae6d3342206a30a4f9851d53.js"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-R2IPK0ynZsjbKINgeYJJHiKYHV0i4yy6KToQW26PlmtDs7VUyZ1Lj1GWXK+YlYrQ1KztolcjJwcixddd1myOMQ==" type="application/javascript" src="https://assets-cdn.github.com/assets/github-10c9c39930a1b8562057281be0eba499.js"></script>
+    
+      <script crossorigin="anonymous" integrity="sha512-mhx7UwxJsPSh1J+MmVE55Wh5tqGAPWrvh6nKsvVChR4WJOJptUwOF6A02dNG53fMmyNOFD8SIggYdILZecd5zg==" type="application/javascript" src="https://assets-cdn.github.com/assets/wiki-a1d6894146735b23d364e07b10d769d8.js"></script>
+
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+    </button>
+  </div>
+</div>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+<div id="hovercard-aria-description" class="sr-only">
+  Press h to open a hovercard with more details.
+</div>
+
+
+  </body>
+</html>
+
